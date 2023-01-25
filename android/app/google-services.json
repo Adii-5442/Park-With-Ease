@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1053637502884",
+    "project_id": "park-with-ease",
+    "storage_bucket": "park-with-ease.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053637502884:android:f260dfc4f8cc8efb4a4331",
+        "android_client_info": {
+          "package_name": "com.park_with_ease"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053637502884-lq6vgvguql3has40869jko9ms3e05gnh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.park_with_ease",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1053637502884-csd6436d8uskcentrdc0sv1g01f9pdha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3_EO-mV-syZfyPvpnjM9cAJFljvH0y5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053637502884-csd6436d8uskcentrdc0sv1g01f9pdha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -63,7 +63,7 @@ const Login = () => {
 
             </View>
           <View style = {{marginTop:0}}>
-            <Button title='Proceed' style = {{marginTop:20}} onPress ={()=>navigation.navigate('Home')} />
+            <Button title='Proceed' style = {{marginTop:20}} onPress ={()=>navigation.navigate('OtpScreen')} />
           </View>
         </View>
     )
