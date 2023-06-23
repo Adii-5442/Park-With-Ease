@@ -15,7 +15,7 @@ const Welcome = () => {
         <View style = {{flex:1,backgroundColor:'#000000'}}>
             <View style = {{flex:0.8}}>
                 <Image 
-                    source = {require('../assets/images/ParkWelcLogo.jpeg')}   
+                    source = {require('../../assets/images/ParkWelcLogo.jpeg')}   
                     style = {{flex:1 , width:'100%', height:'120%' , resizeMode :'contain'}}
                 />
             </View>
