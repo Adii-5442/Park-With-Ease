@@ -5772,6 +5772,11 @@ react-native-country-picker-modal@^2.0.0:
     prop-types "15.7.2"
     react-async-hook "3.6.1"
 
+react-native-fast-image@^8.6.3:
+  version "8.6.3"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.6.3.tgz#6edc3f9190092a909d636d93eecbcc54a8822255"
+  integrity sha512-Sdw4ESidXCXOmQ9EcYguNY2swyoWmx53kym2zRsvi+VeFCHEdkO+WG1DK+6W81juot40bbfLNhkc63QnWtesNg==
+
 react-native-gradle-plugin@^0.70.3:
   version "0.70.3"
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz"

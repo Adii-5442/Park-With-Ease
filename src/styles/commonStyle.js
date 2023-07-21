@@ -232,10 +232,12 @@ const commonStyle = StyleSheet.create({
       backgroundColor: colors.WHITE    
     },
     buttonView: {
-      backgroundColor: colors.BLACK,
+      backgroundColor: '#ad8934',
       height: height * 0.065,
       width: width * 0.86,
       borderRadius: 12,
+      borderWidth:1,
+      borderColor:'#ad8934',
       alignItems: 'center',
       justifyContent: 'center'
     },
