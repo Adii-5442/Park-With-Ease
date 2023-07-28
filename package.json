@@ -13,6 +13,7 @@
     "@react-native-community/clipboard": "^1.5.1",
     "@react-native-firebase/app": "^18.1.0",
     "@react-native-firebase/auth": "^18.1.0",
+    "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
     "@twotalltotems/react-native-otp-input": "^1.3.11",
