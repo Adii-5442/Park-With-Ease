@@ -35,13 +35,13 @@ const HomeStack = () => {
 const UserStack = () => {
   return (
     <NavigationContainer>
-        <Tab.Navigator>
+      <Tab.Navigator>
           <Tab.Screen
           name="Home"
           component={HomeScreen}
           options={{
             tabBarShowLabel: false,
-            headerShown:false,
+            headerShown: false,
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
                     <Image source={require("../../assets/icons/home.png")}
@@ -59,6 +59,53 @@ const UserStack = () => {
             ),
           }}
         />
+        <Tab.Screen
+          name="Details"
+          component={HomeScreen}
+          options={{
+            tabBarShowLabel: false,
+            headerShown:false,
+            tabBarIcon: ({ focused }) => (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                    <Image source={require("../../assets/icons/to-do-list.png")}
+                        resizeMode='contain'
+                        style={{
+                            tintColor: focused ? colors.BLACK : "#D1CAD8",height:35,width:35
+                        }} />
+                        <Image source={require("../../assets/icons/home.png")}
+                        resizeMode='contain'
+                        style={{
+                            tintColor: focused ? colors.BLACK : colors.WHITE,height:5,width:5
+                        }} />
+                </View>
+              
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={HomeScreen}
+          options={{
+            tabBarShowLabel: false,
+            headerShown:false,
+            tabBarIcon: ({ focused }) => (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                    <Image source={require("../../assets/icons/profile-user.png")}
+                        resizeMode='contain'
+                        style={{
+                            tintColor: focused ? colors.BLACK : "#D1CAD8",height:35,width:35
+                        }} />
+                        <Image source={require("../../assets/icons/home.png")}
+                        resizeMode='contain'
+                        style={{
+                            tintColor: focused ? colors.BLACK : colors.WHITE,height:5,width:5
+                        }} />
+                </View>
+              
+            ),
+          }}
+        />
+
       </Tab.Navigator>
     </NavigationContainer>
     
