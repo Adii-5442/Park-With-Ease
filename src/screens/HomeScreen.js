@@ -46,10 +46,10 @@ const HomeScreen = () => {
   ];
 
   return (
-    <View style={{flex: 1, backgroundColor: '#2f302f'}}>
+    <ScrollView style={{flex: 1, backgroundColor: '#2f302f'}}>
       <View
         style={{
-          flex: 0.28,
+          height: 200,
           backgroundColor: '#2f302f',
         }}>
         <Image
@@ -58,14 +58,13 @@ const HomeScreen = () => {
             alignSelf: 'center',
             marginLeft: 50,
             paddingRight: 20,
-            marginTop: 30,
             width: '100%',
             resizeMode: 'contain',
           }}
           source={require('../../assets/icons/gen.png')}
         />
       </View>
-      <ScrollView
+      <View
         style={{
           flex: 0.7,
           backgroundColor: '#c1c9c4',
@@ -94,8 +93,50 @@ const HomeScreen = () => {
             absolute
           />
         </View>
-      </ScrollView>
-    </View>
+        <View style={styles.parkingInfo}>
+          <Text style={styles.parkingText}>
+            Welcome to our parking lot! We provide safe and secure parking
+            services for all types of vehicles.
+          </Text>
+        </View>
+        <View style={styles.parkingInfo}>
+          <Text style={styles.parkingText}>
+            With our efficient parking management system, we ensure a
+            hassle-free experience for all our customers.
+          </Text>
+        </View>
+        <View style={styles.parkingInfo}>
+          <Text style={styles.parkingText}>
+            Whether you need short-term parking or long-term parking, we've got
+            you covered.
+          </Text>
+        </View>
+        <View style={styles.parkingInfo}>
+          <Text style={styles.parkingText}>
+            Our parking lot is equipped with 24/7 surveillance cameras, ensuring
+            the safety and security of your vehicles at all times.
+          </Text>
+        </View>
+        <View style={styles.parkingInfo}>
+          <Text style={styles.parkingText}>
+            We offer convenient payment options, including mobile payments, so
+            you can easily pay for your parking without any hassle.
+          </Text>
+        </View>
+        <View style={styles.parkingInfo}>
+          <Text style={styles.parkingText}>
+            Whether you are a daily commuter or a visitor, our spacious parking
+            lot has plenty of spots to accommodate all types of vehicles.
+          </Text>
+        </View>
+        <View style={styles.parkingInfo}>
+          <Text style={styles.parkingText}>
+            Enjoy your day knowing that your vehicle is parked in a secure and
+            well-maintained parking facility.
+          </Text>
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
@@ -114,7 +155,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.3,
     shadowRadius: 3.84,
-    elevation: 5, // For Android, this will give a similar shadow effect
+    elevation: 5,
     marginVertical: 20,
   },
   TextNum: {
@@ -124,6 +165,15 @@ const styles = StyleSheet.create({
   textBottom: {
     textAlign: 'center',
     textAlignVertical: 'center',
+  },
+  parkingInfo: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+  parkingText: {
+    fontSize: 16,
+    color: '#000',
+    textAlign: 'center',
   },
 });
 export default HomeScreen;
