@@ -1,4 +1,4 @@
-import {Text, View , Button , TouchableOpacity} from 'react-native';
+import {Text, View, Button, TouchableOpacity} from 'react-native';
 import React, {Component} from 'react';
 import {Image} from 'react-native';
 import * as Progress from 'react-native-progress';
@@ -105,8 +105,11 @@ const HomeScreen = () => {
           </View>
         </View>
       </ScrollView>
-      <TouchableOpacity>
-        <Text>Hello</Text>
+      <TouchableOpacity
+        style={{alignItems: 'center', justifyContent: 'center'}}>
+        <View style={styles.box2}>
+          <Text style={{fontSize: 18, color: '#FFFF'}}> + Add Vehicle</Text>
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -118,6 +121,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 200,
     backgroundColor: '#edf2ef', // Transparent white background
+    borderRadius: 20,
+    opacity: 0.8, // Adjust the opacity to control the transparency level
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginVertical: 20,
+  },
+  box2: {
+    alignItems: 'center',
+    height: 50,
+    justifyContent: 'center',
+    width: 200,
+    backgroundColor: '#000000', // Transparent white background
     borderRadius: 20,
     opacity: 0.8, // Adjust the opacity to control the transparency level
     shadowColor: '#000',
