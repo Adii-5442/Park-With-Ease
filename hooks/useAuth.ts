@@ -13,8 +13,6 @@ export function useAuth(){
             }
         })
         return subscriber;
-
-
     },[])
 
     return {

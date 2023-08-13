@@ -31,6 +31,7 @@ const BottomLoader = ({isLoading}) => {
   if (!isLoading) {
     return null; // Render nothing if isLoading is false
   }
+  
 
   return (
     <View style={styles.container}>
