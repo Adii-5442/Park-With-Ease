@@ -128,7 +128,7 @@ const HomeScreen = () => {
               }}
               width={screenWidth*0.95} // from react-native
               height={220}
-              yAxisLabel="$"
+              yAxisLabel="Rs "
               yAxisSuffix="k"
               yAxisInterval={1} // optional, defaults to 1
               chartConfig={{
