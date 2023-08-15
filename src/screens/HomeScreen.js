@@ -4,7 +4,7 @@ import {Image} from 'react-native';
 import * as Progress from 'react-native-progress';
 import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, ScrollView} from 'react-native';
-import {PieChart} from 'react-native-chart-kit';
+import {PieChart , LineChart} from 'react-native-chart-kit';
 import {Dimensions} from 'react-native';
 const screenWidth = Dimensions.get('window').width;
 const HomeScreen = () => {
@@ -87,12 +87,11 @@ const HomeScreen = () => {
             <View>
               <PieChart
                 data={data}
-                width={screenWidth}
+                width={screenWidth*0.85}
                 height={200}
                 chartConfig={chartConfig}
                 accessor={'population'}
                 backgroundColor={'transparent'}
-                paddingLeft={'15'}
                 absolute
               />
             </View>
@@ -102,15 +101,67 @@ const HomeScreen = () => {
                 services for all types of vehicles.
               </Text>
             </View>
+            <LineChart
+                data={{
+                  labels: ["January", "February", "March", "April", "May", "June"],
+                  datasets: [
+                    {
+                      data: [
+                        Math.random() * 100,
+                        Math.random() * 100,
+                        Math.random() * 100,
+                        Math.random() * 100,
+                        Math.random() * 100,
+                        Math.random() * 100
+                      ]
+                    }
+                  ]
+                }}
+                width={Dimensions.get("window").width} // from react-native
+                height={220}
+                yAxisLabel="$"
+                yAxisSuffix="k"
+                yAxisInterval={1} // optional, defaults to 1
+                chartConfig={{
+                  backgroundColor: "#e26a00",
+                  backgroundGradientFrom: "#fb8c00",
+                  backgroundGradientTo: "#ffa726",
+                  decimalPlaces: 2, // optional, defaults to 2dp
+                  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                  labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                  style: {
+                    borderRadius: 16
+                  },
+                  propsForDots: {
+                    r: "6",
+                    strokeWidth: "2",
+                    stroke: "#ffa726"
+                  }
+                }}
+                bezier
+                style={{
+                  marginVertical: 8,
+                  borderRadius: 16
+                }}
+              />
           </View>
         </View>
       </ScrollView>
-      <TouchableOpacity
-        style={{alignItems: 'center', justifyContent: 'center'}}>
-        <View style={styles.box2}>
-          <Text style={{fontSize: 18, color: '#FFFF'}}> + Add Vehicle</Text>
+      <View style={styles.buttonContainer}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
+          <TouchableOpacity
+            style={[styles.floatingButton]}>
+            <View style={styles.box2}>
+              <Text style={{ fontSize: 18, color: '#FFFF' }}>+ Add Vehicle</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.floatingButton}>
+            <View style={styles.box2}>
+              <Text style={{ fontSize: 18, color: '#FFFF' }}>- Remove Vehicle</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -133,14 +184,24 @@ const styles = StyleSheet.create({
     elevation: 5,
     marginVertical: 20,
   },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 10,
+    width: '100%',
+    alignItems: 'center',
+    marginHorizontal:10,
+
+  },
+  floatingButton:{  
+    marginHorizontal:10
+  },
   box2: {
     alignItems: 'center',
     height: 50,
     justifyContent: 'center',
-    width: 200,
+    paddingHorizontal:20,
     backgroundColor: '#000000', // Transparent white background
     borderRadius: 20,
-    opacity: 0.8, // Adjust the opacity to control the transparency level
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -149,7 +210,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 3.84,
     elevation: 5,
-    marginVertical: 20,
   },
   TextNum: {
     fontSize: 15,
