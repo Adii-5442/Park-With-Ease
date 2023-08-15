@@ -1,10 +1,11 @@
+/* eslint-disable react-native/no-inline-styles */
 import {Text, View, Button, TouchableOpacity} from 'react-native';
 import React, {Component} from 'react';
 import {Image} from 'react-native';
 import * as Progress from 'react-native-progress';
 import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, ScrollView} from 'react-native';
-import {PieChart , LineChart} from 'react-native-chart-kit';
+import {PieChart, LineChart} from 'react-native-chart-kit';
 import {Dimensions} from 'react-native';
 const screenWidth = Dimensions.get('window').width;
 const HomeScreen = () => {
@@ -21,6 +22,7 @@ const HomeScreen = () => {
     barPercentage: 0.5,
     useShadowColorFromDataset: false, // optional
   };
+
   const data = [
     {
       name: 'Total Vehicles',
@@ -87,7 +89,7 @@ const HomeScreen = () => {
             <View>
               <PieChart
                 data={data}
-                width={screenWidth*0.85}
+                width={screenWidth * 0.85}
                 height={200}
                 chartConfig={chartConfig}
                 accessor={'population'}
@@ -102,62 +104,89 @@ const HomeScreen = () => {
               </Text>
             </View>
             <LineChart
-                data={{
-                  labels: ["January", "February", "March", "April", "May", "June"],
-                  datasets: [
-                    {
-                      data: [
-                        Math.random() * 100,
-                        Math.random() * 100,
-                        Math.random() * 100,
-                        Math.random() * 100,
-                        Math.random() * 100,
-                        Math.random() * 100
-                      ]
-                    }
-                  ]
-                }}
-                width={Dimensions.get("window").width} // from react-native
-                height={220}
-                yAxisLabel="$"
-                yAxisSuffix="k"
-                yAxisInterval={1} // optional, defaults to 1
-                chartConfig={{
-                  backgroundColor: "#e26a00",
-                  backgroundGradientFrom: "#fb8c00",
-                  backgroundGradientTo: "#ffa726",
-                  decimalPlaces: 2, // optional, defaults to 2dp
-                  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                  labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                  style: {
-                    borderRadius: 16
+              data={{
+                labels: [
+                  'January',
+                  'February',
+                  'March',
+                  'April',
+                  'May',
+                  'June',
+                ],
+                datasets: [
+                  {
+                    data: [
+                      Math.random() * 100,
+                      Math.random() * 100,
+                      Math.random() * 100,
+                      Math.random() * 100,
+                      Math.random() * 100,
+                      Math.random() * 100,
+                    ],
                   },
-                  propsForDots: {
-                    r: "6",
-                    strokeWidth: "2",
-                    stroke: "#ffa726"
-                  }
-                }}
-                bezier
-                style={{
-                  marginVertical: 8,
-                  borderRadius: 16
-                }}
-              />
+                ],
+              }}
+              width={screenWidth*0.95} // from react-native
+              height={220}
+              yAxisLabel="$"
+              yAxisSuffix="k"
+              yAxisInterval={1} // optional, defaults to 1
+              chartConfig={{
+                backgroundColor: '#05f545',
+                backgroundGradientFrom: '#00ff44',
+                backgroundGradientTo: '#002b0c',
+                decimalPlaces: 2, // optional, defaults to 2dp
+                color: (opacity = 0) => `rgba(255, 255, 255, ${opacity})`,
+                labelColor: (opacity = 0) => `rgba(0, 0, 0, ${opacity})`,
+                style: {
+                  borderRadius: 16,
+                },
+                propsForDots: {
+                  r: '6',
+                  strokeWidth: '2',
+                  stroke: '#02330f',
+                },
+              }}
+              bezier
+              style={{
+                marginVertical: 8,
+                borderRadius: 16,
+                alignSelf: 'center',
+              }}
+            />
+            <View style={styles.parkingInfo}>
+              <Text style={styles.parkingText}>
+                Welcome to our parking lot! We provide safe and secure parking
+                services for all types of vehicles.
+              </Text>
+            </View>
+            <View style={styles.parkingInfo}>
+              <Text style={styles.parkingText}>
+                Welcome to our parking lot! We provide safe and secure parking
+                services for all types of vehicles.
+              </Text>
+            </View>
+            <View style={styles.parkingInfo}>
+              <Text style={styles.parkingText}>
+                Welcome to our parking lot! We provide safe and secure parking
+                services for all types of vehicles.
+              </Text>
+            </View>
           </View>
         </View>
       </ScrollView>
       <View style={styles.buttonContainer}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TouchableOpacity
-            style={[styles.floatingButton]}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <TouchableOpacity style={[styles.floatingButton]}>
             <View style={styles.box2}>
-              <Text style={{ fontSize: 18, color: '#FFFF' }}>+ Add Vehicle</Text>
+              <Text style={{fontSize: 18, color: '#FFFF'}}>+ Add Vehicle</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.floatingButton}>
             <View style={styles.box2}>
-              <Text style={{ fontSize: 18, color: '#FFFF' }}>- Remove Vehicle</Text>
+              <Text style={{fontSize: 18, color: '#FFFF'}}>
+                - Remove Vehicle
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -189,17 +218,16 @@ const styles = StyleSheet.create({
     bottom: 10,
     width: '100%',
     alignItems: 'center',
-    marginHorizontal:10,
-
+    marginHorizontal: 10,
   },
-  floatingButton:{  
-    marginHorizontal:10
+  floatingButton: {
+    marginHorizontal: 10,
   },
   box2: {
     alignItems: 'center',
     height: 50,
     justifyContent: 'center',
-    paddingHorizontal:20,
+    paddingHorizontal: 20,
     backgroundColor: '#000000', // Transparent white background
     borderRadius: 20,
     shadowColor: '#000',
