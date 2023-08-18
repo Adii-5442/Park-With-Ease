@@ -13,7 +13,7 @@ import PhoneInput from 'react-native-phone-number-input';
 import commonStyle from '../styles/commonStyle';
 import colors from '../styles/colors';
 const {height, width} = Dimensions.get('window');
-const AddVehicle = () => {
+const AddVehicle = props => {
   const [vehicleNumber, setVehicleNumber] = useState('');
   const [phoneNumber, setPhoneNumber] = useState(0);
   const [countryName, setCountryName] = useState('India');
@@ -35,7 +35,24 @@ const AddVehicle = () => {
       style={{flex: 1, resizeMode: 'cover', justifyContent: 'center'}}
       source={require('../../assets/images/peakpx.jpg')}>
       <View style={[styles.container]}>
-        <Text style={styles.title}>VEHICLE ENTRY</Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginVertical: 50,
+            marginHorizontal: 20,
+            alignItems: 'center',
+          }}>
+          <TouchableOpacity
+            onPress={() => props.navigation.goBack()}
+            style={{zIndex: 1, paddingRight: 20}}>
+            <Image
+              style={{resizeMode: 'contain', height: 30, width: 30}}
+              source={require('../../assets/images/backIcon.png')}
+            />
+          </TouchableOpacity>
+
+          <Text style={styles.title}>VEHICLE ENTRY</Text>
+        </View>
         <View>
           <Text style={styles.text2}>Enter Vehicle Number</Text>
           <TextInput
@@ -125,13 +142,10 @@ const AddVehicle = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
   },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    marginVertical: 50,
-    marginHorizontal: 20,
     color: '#ffffff',
     alignSelf: 'center',
     fontWeight: '600',
@@ -160,8 +174,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 20,
-    alignContent:'center',
-    alignSelf:'center'
+    alignContent: 'center',
+    alignSelf: 'center',
   },
   typeV: {
     alignSelf: 'center',
