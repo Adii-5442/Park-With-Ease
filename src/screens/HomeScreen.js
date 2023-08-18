@@ -126,13 +126,13 @@ const HomeScreen = () => {
                   },
                 ],
               }}
-              width={screenWidth*0.95} // from react-native
+              width={screenWidth * 0.95} // from react-native
               height={220}
               yAxisLabel="Rs "
               yAxisSuffix="k"
               yAxisInterval={1} // optional, defaults to 1
               chartConfig={{
-                backgroundColor: '#05f545',
+                backgroundColor: '#0e4a20',
                 backgroundGradientFrom: '#00ff44',
                 backgroundGradientTo: '#002b0c',
                 decimalPlaces: 2, // optional, defaults to 2dp
@@ -177,12 +177,16 @@ const HomeScreen = () => {
       </ScrollView>
       <View style={styles.buttonContainer}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TouchableOpacity style={[styles.floatingButton]}>
+          <TouchableOpacity
+            onPress={() => navigation.push('AddVehicle')}
+            style={[styles.floatingButton]}>
             <View style={styles.box2}>
               <Text style={{fontSize: 18, color: '#FFFF'}}>+ Add Vehicle</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.floatingButton}>
+          <TouchableOpacity
+            onPress={() => navigation.push('RemoveVehicle')}
+            style={styles.floatingButton}>
             <View style={styles.box2}>
               <Text style={{fontSize: 18, color: '#FFFF'}}>
                 - Remove Vehicle
