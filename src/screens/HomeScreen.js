@@ -7,6 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, ScrollView} from 'react-native';
 import {PieChart, LineChart} from 'react-native-chart-kit';
 import {Dimensions} from 'react-native';
+import colors from '../styles/colors';
 const screenWidth = Dimensions.get('window').width;
 const HomeScreen = () => {
   console.log(screenWidth);
@@ -50,11 +51,11 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container}>
-        <View style={{backgroundColor: '#2f302f'}}>
+        <View style={{backgroundColor: colors.BLACK}}>
           <View
             style={{
               height: 200,
-              backgroundColor: '#2f302f',
+              backgroundColor: colors.BLACK,
             }}>
             <Image
               style={{
@@ -262,7 +263,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#c1c9c4',
+    backgroundColor: colors.BLACK,
   },
 });
 export default HomeScreen;

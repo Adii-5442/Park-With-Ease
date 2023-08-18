@@ -59,6 +59,7 @@ const AddVehicle = props => {
             style={styles.input}
             placeholder="eg. UP32XXXXXX"
             value={vehicleNumber}
+            placeholderTextColor={'#012313'}
             onChangeText={text => setVehicleNumber(text)}
           />
         </View>
