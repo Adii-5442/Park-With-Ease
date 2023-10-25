@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Text, View, Button, TouchableOpacity} from 'react-native';
+import {Text, View, Button, TouchableOpacity.useState} from 'react-native';
 import React, {Component} from 'react';
 import {Image} from 'react-native';
 import * as Progress from 'react-native-progress';
@@ -23,6 +23,8 @@ const HomeScreen = () => {
     barPercentage: 0.5,
     useShadowColorFromDataset: false, // optional
   };
+
+  const [take , setTake] = useState();
 
   const data = [
     {
